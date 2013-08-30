@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+    <head>
+        <a href="/advertisement/home">Home</a>
+        <a href="/advertisement/search">Search</a>
+        <a href="/advertisement/add">Add</a>
+        <title>AutoAds.py</title>
+    </head>
+    <form id='add_car_form' action="./add" method="POST">{% csrf_token %}
+        
+        <label id="info" for="model_id">Model:</label>
+        <select name="model_id">
+            {% for model in models %}
+                <option value={{model.id}}> {{model}} </option>
+            {% endfor %}
+        </select>
+        </br>
+        
+        <label id="info" for="production">Production:</label>
+        <select name="production" required>
+            <!--<option value={{"---"}}> --- </option><-->
+            {% for i in PRODUCTION %}
+                <option value={{i}}> {{i}} </option>
+            {% endfor %}
+        </select><br>
+        
+        <label id="info" for="price">Price:</label>
+        <input type="number" name="price" min="1" required><br>
+        
+        <label id="info" for="color">Color:</label>
+        <input type="text" name="color" required><br>
+        
+        <div><label for="photo_file_1"> Photo 1:</label><input  type="file" name="photo_file_1"></input></div>
+    
+        <div><label for="photo_file_2"> Photo 2:</label><input  type="file" name="photo_file_2"></input></div>
+        
+        <div><label for="photo_file_3"> Photo 3:</label><input  type="file" name="photo_file_3"></input></div>
+    
+        <div><label for="photo_file_4"> Photo 4:</label><input  type="file" name="photo_file_4"></input></div>
+    
+        <div><label for="photo_file_5"> Photo 5:</label><input  type="file" name="photo_file_5"></input></div>
+        
+        <label id="info" for="engine_size">Engine size:</label>
+        <input type="number" name="engine_size" min="1" required><br>
+        
+        <label id="info" for="fuel_consumption">Fuel consumption:</label>
+        <input type="number" name="fuel_consumption" min="1" required><br> 
+        
+        <label id="info" for="power">Power(hp) :</label>
+        <input type="number" name="power" min="1" max="2000" required><br>
+        
+        <label id="info" for="fuel_type">Fuel type:</label>
+        <select name="fuel_type" required>
+            {% for i in FUEL_TYPES_HTML %}
+                <option value={{i}}> {{i}} </option>
+            {% endfor %}
+        </select><br>
+        
+        <label id="info" for="gearbox_type">Gearbox type:</label>
+        <select name="gearbox_type" required>
+            {% for i in GEARBOX_TYPES_HTML %}
+                <option value={{i}}> {{i}} </option>
+            {% endfor %}
+        </select><br>
+        
+    
+        
+        <label id="info" for="mieage">Mileage:</label>
+        <input type="number" name="mileage" min="1" max="3000000" required><br>
+        
+        <label id="info" for="auxiliary_heating">Auxiliary heating:</label>
+        <input name="auxiliary_heating" align="right" type="checkbox" ><br>
+        
+        <label id="info" for="central_locking">Central locking:</label>
+        <input name="central_locking" type="checkbox"><br>
+        
+        <label id="info" for="cruise_control">Cruise control:</label>
+        <input name="cruise_control" type="checkbox"><br>
+        
+        <label id="info" for="electric_heated_seats">Electric heated seats:</label>
+        <input name="electric_heated_seats" type="checkbox"><br>
+        
+        <label id="info" for="electric_windows">Electric windows:</label>
+        <input name="electric_windows" type="checkbox"><br>
+        
+        <label id="info" for="navigation_system">Navigation system:</label>
+        <input name="navigation_system" type="checkbox"><br>
+        
+        <label id="info" for="parking_sensors">Parking sensors:</label>
+        <input name="parking_sensors" type="checkbox"><br>
+        
+        <label id="info" for="power_assisted_steering">Power assisted steering:</label>
+        <input name="power_assisted_steering" type="checkbox"><br>
+        
+        <label id="info" for="sunroof">Sunroof:</label>
+        <input name="sunroof" type="checkbox"><br>
+        
+        <label id="info" for="ABS">ABS:</label>
+        <input name="ABS" type="checkbox"><br>
+        
+        <label id="info" for="ESP">ESP:</label>
+        <input name="ESP" type="checkbox"><br>
+        
+        <label id="info" for="four_wheel_drive">Four wheel drive:</label>
+        <input name="four_wheel_drive" type="checkbox"><br>
+        
+        <label id="info" for="immobilizer">Immobilizer:</label>
+        <input name="immobilizer" type="checkbox"><br>
+        
+        <label id="info" for="particulate">Particulate:</label>
+        <input name="particulate" type="checkbox"><br>
+        
+        <label id="info" for="xenon_headlights">Xenon headlights:</label>
+        <input name="xenon_headlights" type="checkbox"><br>
+        
+        <label id="info" for="taxi">Taxi:</label>
+        <input name="taxi" type="checkbox"><br>
+        
+        <label id="info" for="disabled_accessible">Disabled accessible:</label>
+        <input name="disabled_accessible" type="checkbox"><br>
+        
+        <label id="info" for="full_service_history">Full service history:</label>
+        <input name="full_service_history" type="checkbox"><br>
+            
+        <input type="submit" value="Add" style="height:50px; width:150px" />
+        
+    </form>
+</html>

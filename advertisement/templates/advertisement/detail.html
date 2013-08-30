@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+    <head>
+    <a href="/advertisement/home">Home</a>
+    <a href="/advertisement/search">Search</a>
+    <a href="/advertisement/add">Add</a>
+    <title>AutoAds.py</title>
+    </head>
+        
+    <h1> {{ car }} </h1>
+    {% if car.photo_file_1 %}
+    <img class="Photo 1" src="{{ car.photo_file_1.url }}" width="950px"/>
+    {% endif %}
+    {% if car.photo_file_2 %}
+    <img class="Photo 1" src="{{ car.photo_file_2.url }}" width="950px"/>
+    {% endif %}
+    {% if car.photo_file_3 %}
+    <img class="Photo 1" src="{{ car.photo_file_3.url }}" width="950px"/>
+    {% endif %}
+    {% if car.photo_file_4 %}
+    <img class="Photo 1" src="{{ car.photo_file_4.url }}" width="950px"/>
+    {% endif %}
+    {% if car.photo_file_5 %}
+    <img class="Photo 1" src="{{ car.photo_file_5.url }}" width="950px"/>
+    {% endif %}
+    <h3> Production: {{car.production}} </h3>
+    <h3> Mileage: {{car.mileage}} </h3>
+    <h3> Engine power (hp): {{car.power}} </h3>
+    <h3> Engine size (cc): {{car.engine_size}} </h3>
+    <h3> Fuel type: {{car.fuel_type}} </h3>
+    <h3> Fuel consumption: {{car.fuel_consumption}} </h3>
+    <h3> Gearbox type: {{car.gearbox_type}} </h3>
+    <h3> Color: {{car.color}} </h3>
+    <h3> Extras: </h3>
+    <div>
+    {% if car.auxiliary_heating %}
+    <h3> Auxhillary heating </h3>
+    {% endif %}
+    {% if car.central_locking %}
+    <h3> Central locking </h3>
+    {% endif %}
+    {% if car.cruise_control %}
+    <h3> Cruise control </h3>
+    {% endif %}
+    {% if car.electric_heated_seats %}
+    <h3> Electric heated seats </h3>
+    {% endif %}
+    {% if car.electric_windows %}
+    <h3> Electric windows </h3>
+    {% endif %}
+    {% if car.navigation_system %}
+    <h3> Navigation system </h3>
+    {% endif %}
+    {% if car.parking_sensors %}
+    <h3> Parking sensors </h3>
+    {% endif %}
+    {% if car.power_assisted_steering %}
+    <h3> Power assisted steering </h3>
+    {% endif %}
+    {% if car.sunroof %}
+    <h3> Sunroof </h3>
+    {% endif %}
+    {% if car.ABS %}
+    <h3>  ABS </h3>
+    {% endif %}
+    {% if car.ESP %}
+    <h3>  ESP </h3>
+    {% endif %}
+    {% if car.four_wheel_drive %}
+    <h3> Four wheel drive </h3>
+    {% endif %}
+    {% if car.immobilizer %}
+    <h3> Immobilizer </h3>
+    {% endif %}
+    {% if car.particulate %}
+    <h3> Particulate </h3>
+    {% endif %}
+    {% if car.xenon_headlights %}
+    <h3> Xenon headlights </h3>
+    {% endif %}
+    {% if car.taxi %}
+    <h3> Taxi </h3>
+    {% endif %}
+    {% if car.disabled_accessible %}
+    <h3> Disabled accessible </h3>
+    {% endif %}
+    {% if car.full_service_history %}
+    <h3> Full service history </h3>
+    {% endif %}
+    </div>
+</html>

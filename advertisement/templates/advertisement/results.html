@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+    <head>
+    <a href="/advertisement/home">Home</a>
+    <a href="/advertisement/search">Search</a>
+    <a href="/advertisement/add">Add</a>
+    <title>AutoAds.py</title>
+    </head>
+{% load url from future %}
+{% if results_car_list %}
+    <ul>
+    {% for car in results_car_list %}
+    <div>
+        <li><a href="{% url 'advertisement:detail' car.id %}">{{car}}</a></li>
+        {% if car.photo_file_1 %}
+        <img class="Photo 1" src="{{ car.photo_file_1.url }}"  width="100px" />
+        {% endif %}    
+    </div>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> No cars are available. </p>
+{% endif %}
+</html>
